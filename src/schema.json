@@ -1,0 +1,164 @@
+{
+  "title": "Services",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "type": "string",
+      "minLength": 3,
+      "description": "Please enter the id"
+    },
+    "Description": {
+      "type": "string",
+      "minLength": 3,
+      "description": "Please enter the description"
+    },
+
+    "Logging-Format": {
+      "type": "object",
+      "properties": {
+        "Order": {
+          "type": "string",
+          "description": "Please enter the format",
+          "enum": [
+            "asctime",
+            "service",
+            "req_id",
+            "severity",
+            "id",
+            "message",
+            "Other"
+          ]
+        },
+        "Delimeter": {
+          "type": "string",
+          "description": "Please enter the format",
+          "enum": ["|", "/", " ", "Other"]
+        }
+      },
+      "required": []
+    },
+
+    "Logger": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Type": {
+            "type": "string",
+            "description": "Please enter the type"
+          },
+          "Plugin": {
+            "type": "string",
+            "description": "Please enter the valid input"
+          },
+          "Plugin-Data": {
+            "type": "object",
+            "properties": {
+              "File-path": {
+                "type": "string",
+                "description": "Please enter the valid path"
+              },
+              "Max-log-size": {
+                "type": "integer",
+                "description": "Please enter the valid input",
+                "maximum": 100000000,
+                "minimum": 1
+              },
+              "Max-log-files": {
+                "type": "integer",
+                "description": "Please enter the valid input",
+                "maximum": 10000000000,
+                "minimum": 1
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "Error-Codes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "string",
+            "description": "Please enter the valid ID"
+          },
+
+          "log": {
+            "type": "object",
+            "properties": {
+              "Messages": {
+                "type": "string",
+                "description": "Please enter the valid message"
+              },
+              "Severity": {
+                "type": "string",
+                "description": "Please enter the valid input",
+                "enum": ["High", "Medium", "Low"]
+              },
+              "Arguments": {
+                "type": "object",
+                "properties": {
+                  "Name": {
+                    "type": "string",
+                    "description": "Please enter the name"
+                  },
+                  "Description": {
+                    "type": "string",
+                    "description": "Please enter the description"
+                  }
+                }
+              }
+            }
+          },
+          "Resolution": {
+            "type": "object",
+            "properties": {
+              "Description": {
+                "type": "string",
+                "description": "Please enter the description"
+              },
+              "Owner": {
+                "type": "string",
+                "description": "Please enter the valid input"
+              },
+              "SelfHealing": {
+                "type": "string",
+                "description": "Please enter the valid input"
+              }
+            }
+          },
+
+          "References": {
+            "type": "object",
+            "properties": {
+              "link": {
+                "type": "string",
+                "description": "Please enter the valid input"
+              }
+            }
+          },
+
+          "ReturnCodes": {
+            "type": "object",
+            "properties": {
+              "HTTP": {
+                "type": "string",
+                "description": "Please enter the valid input"
+              },
+              "Console": {
+                "type": "integer",
+                "description": "Please enter the valid input",
+                "maximum": 100000000,
+                "minimum": 1
+              }
+            },
+            "required": []
+          }
+        }
+      }
+    }
+  }
+}

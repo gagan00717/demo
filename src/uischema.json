@@ -1,0 +1,53 @@
+
+{
+  
+  "type": "VerticalLayout",
+  "elements": [
+    {
+      "type": "VerticalLayout",
+      "elements": [
+        {
+          "type": "Control",
+          "label": "Name",
+          "scope": "#/properties/Name"
+        },
+        {
+          "type": "Control",
+          "label": "Description",
+          "scope": "#/properties/Description"
+        }
+      ]
+    },
+    {
+      "type": "VerticalLayout",
+      "elements": [
+        {
+          "type": "Control",
+          "scope": "#/properties/Logging-Format"
+        }
+
+      ]
+    },
+
+    {
+      "type": "VerticalLayout",
+      "elements": [
+        {
+          "type": "Control",
+          "scope": "#/properties/Logger"
+        },
+        {
+          "type":"Control",
+          "scope":"#/properties/Error-Codes"
+        }
+
+      ]
+    }
+    
+
+   
+
+  ]
+}
+  
+  
